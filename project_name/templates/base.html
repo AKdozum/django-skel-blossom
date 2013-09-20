@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	{% block og %}
+	<meta property="og:title" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<meta property="og:description" content="">
+	{% endblock %}
+	{% block header_css %}
+	<link rel="stylesheet" href="{% static bower/normalize-css/normalize.css %}" type="text/css" charset="utf-8">
+	{% endblock %}
+	{% block header_js %}
+	<script src="{% static bower/jquery/jquery.min.js %}" charset="utf-8"></script>
+	{% endblock %}
+	{% endblock %}
+</head>
+<body>
+	<header id="global-head">
+		<h1><a href="/"></a></h1>
+		<nav>
+		</nav>
+	</header>
+	<section id="main">
+	{% block main_content %}
+	{% endblock %}
+	</section>
+	<footer id="global-foot">
+		<nav>
+		</nav>
+	</footer>
+</body>
+<html>
