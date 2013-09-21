@@ -1,6 +1,5 @@
 """Development settings and globals."""
 
-
 from os.path import join, normpath
 
 from common import *
@@ -13,7 +12,6 @@ DEBUG = True
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
-
 
 ########## EMAIL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
@@ -35,6 +33,39 @@ DATABASES = {
 }
 ########## END DATABASE CONFIGURATION
 
+########## LOGGING CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            '()': 'colorlog.ColoredFormatter',
+            'format': '[%(log_color)s%(levelname)s%(reset)s] %(module)s.%(funcName)s:%(lineno)s: %(message)s',
+            'log_colors': {
+                'DEBUG':    'cyan',
+                'INFO':     'reset',
+                'WARNING':  'yellow',
+                'ERROR':    'red',
+                'CRITICAL': 'bold_red',
+            },
+        },
+    },
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'console',
+        },
+    },
+    'loggers': {
+        'apps': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    }
+}
+########## END LOGGING CONFIGURATION
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
@@ -56,6 +87,7 @@ CELERY_ALWAYS_EAGER = True
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 INSTALLED_APPS += (
     'debug_toolbar',
+    'apps.utilcommands',
 )
 
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation

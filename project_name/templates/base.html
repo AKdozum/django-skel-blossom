@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -17,10 +18,10 @@
 	<meta property="og:description" content="">
 	{% endblock %}
 	{% block header_css %}
-	<link rel="stylesheet" href="{% static bower/normalize-css/normalize.css %}" type="text/css" charset="utf-8">
+	<link rel="stylesheet" href="{% static 'bower/normalize-css/normalize.css' %}" type="text/css" charset="utf-8">
 	{% endblock %}
 	{% block header_js %}
-	<script src="{% static bower/jquery/jquery.min.js %}" charset="utf-8"></script>
+	<script src="{% static 'bower/jquery/jquery.min.js' %}" charset="utf-8"></script>
 	{% endblock %}
 	{% endblock %}
 </head>
