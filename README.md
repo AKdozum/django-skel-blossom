@@ -39,10 +39,9 @@
 
 ### アプリケーションの作成
 
-``apps`` 以下に配置します．
+``[project_name]/apps`` 以下に配置されます．
 
-    $ mkdir [project_name]/apps/[app_name]
-    $ python manage.py startapp [app_name] [project_name]/apps/[app_name]
+    $ ./manage.py startapp [app_name]
 
 ### 404.html, 500.html の作成
 
