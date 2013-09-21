@@ -1,5 +1,5 @@
 {
-  "name": "{{ project_name }}_assets",
+  "name": "assets",
   "version": "0.0.0",
   "dependencies": {
     "normalize-css": "latest",
