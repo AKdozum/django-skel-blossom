@@ -31,11 +31,18 @@
 
 ### 依存するソフトウェアのインストール
 
-必要なものが増えたら，適宜 ``reqs`` 以下を更新します．
+必要な Python のパッケージが増えたら，適宜 ``reqs`` 以下を更新します．
 
     $ pip install -r reqs/dev.txt
+
+また，JavaScript と CSS は bower で管理しています．
+初期状態では， normalize.css と jquery の latest が指定されています．
+
     $ cd [project_name]/assets
-    $ bower install
+    $ bower install # bower.json の dependencies が [project_name]/assets/bower へ
+
+ダウンロード先を変えたい場合は
+``[project_name]/assets/.bowerrc`` を変更してください．
 
 ### アプリケーションの作成
 
@@ -43,12 +50,21 @@
 
     $ ./manage.py startapp [app_name]
 
+``-s``, ``--skel`` オプションで
+``app-skel`` ディレクトリ内のテンプレートを指定できます．
+
 ### 404.html, 500.html の作成
 
 テンプレートを ``make`` でレンダリングします．
 
     $ cd [project_name]/templates
     $ make
+
+その他静的に生成したいテンプレートには ``./manage render`` を利用できます．
+
+### Sass, CoffieeScript とか
+
+参考: [COMPRESS_PRECOMPILERS - Django Compressor 1.3 documentation](http://django-compressor.readthedocs.org/en/latest/settings/#django.conf.settings.COMPRESS_PRECOMPILERS)
 
 ### デプロイの参考
 
