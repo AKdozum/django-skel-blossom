@@ -1,3 +1,5 @@
+#-*- coding:utf-8 -*-
+
 """Development settings and globals."""
 
 from os.path import join, normpath
@@ -90,7 +92,6 @@ CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 INSTALLED_APPS += (
     'debug_toolbar',
-    'apps.utilcommands',
 )
 
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
@@ -101,3 +102,11 @@ MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 ########## END TOOLBAR CONFIGURATION
+
+########## PASSWORD HASHERS
+# See: https://docs.djangoproject.com/en/1.4/topics/testing/#speeding-up-the-tests
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+)
+########## END PASSWORD HASHERS
+

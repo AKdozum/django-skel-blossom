@@ -4,16 +4,27 @@
 {% load compress %}
 {% load bower %}
 
-{# Erase header #} 
 {% block og %}{% endblock %}
+
 {% block header_css %}
 {% compress css %}
 	{% bower_css 'normalize-css' %}
 	<link type="text/x-scss" rel="stylesheet" href="{% static 'css/style.scss' %}" charset="utf-8">
 {% endcompress %}
 {% endblock %}
+
 {% block header_js %}{% endblock %}
 
 {% block main_content %}
-		<h2>404 not found</h2>
+		<header>
+			<h2>Hello world</h2>
+		</header>
+		<article>
+			<header>
+			<h3>Article</h3>
+			</header>
+			<div>
+				content
+			</div>
+		</article>
 {% endblock %}

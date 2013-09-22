@@ -4,7 +4,7 @@
 <head>
 	{% block head %}
 	<meta charset="UTF-8">
-	<title>{% block title %}{% endblock %}</title>
+	<title>{% block title %}Site Title{% endblock %}</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta http-equiv="Content-Style-Type" content="text/css">
@@ -17,27 +17,25 @@
 	<meta property="og:site_name" content="">
 	<meta property="og:description" content="">
 	{% endblock %}
-	{% block header_css %}
-	<link rel="stylesheet" href="{% static 'bower/normalize-css/normalize.css' %}" type="text/css" charset="utf-8">
-	{% endblock %}
-	{% block header_js %}
-	<script src="{% static 'bower/jquery/jquery.min.js' %}" charset="utf-8"></script>
-	{% endblock %}
+	{% block header_css %}{% endblock %}{% block header_js %}{% endblock %}
 	{% endblock %}
 </head>
 <body>
 	<header id="global-head">
-		<h1><a href="/"></a></h1>
+		<h1><a href="/">Site Name</a></h1>
 		<nav>
+			<ul>
+				<li><a href="#">content1</a></li>
+				<li><a href="#">content2</a></li>
+				<li><a href="#">content3</a></li>
+			</ul>
 		</nav>
 	</header>
 	<section id="main">
-	{% block main_content %}
-	{% endblock %}
+	{% block main_content %}{% endblock %}
 	</section>
 	<footer id="global-foot">
-		<nav>
-		</nav>
+		copyright © 20xx - 200xx foobar All Rights Reserved.
 	</footer>
 </body>
 <html>

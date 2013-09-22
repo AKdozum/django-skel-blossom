@@ -66,6 +66,10 @@
 
 参考: [COMPRESS_PRECOMPILERS - Django Compressor 1.3 documentation](http://django-compressor.readthedocs.org/en/latest/settings/#django.conf.settings.COMPRESS_PRECOMPILERS)
 
+### DEBUG = True でログに色が着きます
+
+楽しい！！ ✌('ω'✌ )三✌('ω')✌三( ✌'ω')✌
+
 ### デプロイの参考
 
     $ git clone [repository]
